@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1 class="title">SignUp</h1>
+        <form class="form">
+          <label class="email-label" for="e-mail">E-Mail:</label>
+          <input type="text" id="username-input" name="username" required />
+
+          <label for="country" class="country-label">Country:</label>
+          <input type="text" name="country" id="country-input" />
+          <label for="zip" class="zip-label">ZIP Code</label>
+          <input type="number" name="zip" id="zip-input" />
+
+          <label for="password" class="password-label">Password</label>
+          <input type="text" name="password" id="password-input" />
+
+          <label for="password-conf" class="password-label"
+            >Password Confirmation</label
+          >
+          <input type="text" name="password-conf" id="password-input" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      <footer class="footer">created by Ivo S.</footer>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
