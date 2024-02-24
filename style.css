@@ -67,8 +67,12 @@ body {
   font-size: 1.5rem;
 }
 
-input:valid {
-  border-color: green;
+.valid {
+  border-bottom: 3px solid green;
+}
+
+.invalid {
+  border-bottom: 3px solid red;
 }
 
 input:focus {
@@ -114,5 +118,3 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(1px);
 }
-
-/*PASSWORD INPUT ÄNDERN*/
