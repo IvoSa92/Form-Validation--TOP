@@ -67,12 +67,12 @@ body {
   font-size: 1.5rem;
 }
 
-input:focus {
-  border-color: rgb(241, 241, 110);
-}
-
 input:valid {
   border-color: green;
+}
+
+input:focus {
+  border-color: rgb(241, 241, 110);
 }
 
 label {
@@ -91,25 +91,28 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #submit-btn {
-  background: linear-gradient(45deg, blue, red);
+  position: relative;
   border: none;
   color: white;
   padding: 10px 20px;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: bold;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
   border-radius: 5px;
   cursor: pointer;
+  overflow: hidden;
+  background: linear-gradient(45deg, blue, red);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 #submit-btn:hover {
-  background: linear-gradient(45deg, red, blue);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+  transform: scale(1.1);
 }
 
 #submit-btn:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(1px);
 }
+
+/*PASSWORD INPUT ÄNDERN*/
