@@ -14,48 +14,77 @@
   <body>
     <div class="container">
       <div class="form-container">
-        <h1 class="title">SignUp</h1>
+        <div class="title-container"><h1 class="title">SignUp</h1></div>
         <form class="form">
           <label class="email-label" for="e-mail">E-Mail:</label>
-          <input
-            type="text"
-            class="input"
-            id="email-input"
-            name="email"
-            required />
-
+          <div class="section">
+            <input
+              type="text"
+              class="input"
+              id="email-input"
+              name="email"
+              required /><img
+              src="./media/richtig.png"
+              alt="valid"
+              class="icon-valid" />
+            <img src="./media/falsch.png" alt="invalid" class="icon-invalid" />
+          </div>
           <label for="country" class="country-label">Country:</label>
-          <input
-            type="text"
-            class="input"
-            name="country"
-            id="country-input"
-            required />
+
+          <div class="section">
+            <input
+              type="text"
+              class="input"
+              name="country"
+              id="country-input"
+              required />
+            <img src="./media/richtig.png" alt="valid" class="icon-valid" />
+            <img src="./media/falsch.png" alt="invalid" class="icon-invalid" />
+          </div>
           <label for="zip" class="zip-label">ZIP Code</label>
-          <input
-            type="number"
-            class="input"
-            name="zip"
-            id="zip-input"
-            required />
 
+          <div class="section">
+            <input
+              type="number"
+              class="input"
+              name="zip"
+              id="zip-input"
+              required /><img
+              src="./media/richtig.png"
+              alt="valid"
+              class="icon-valid" />
+            <img src="./media/falsch.png" alt="invalid" class="icon-invalid" />
+          </div>
           <label for="password" class="password-label">Password</label>
-          <input
-            type="password"
-            class="input"
-            name="password"
-            id="password-input"
-            required />
 
+          <div class="section">
+            <input
+              type="password"
+              class="input"
+              name="password"
+              id="password-input"
+              required /><img
+              src="./media/richtig.png"
+              alt="valid"
+              class="icon-valid" />
+            <img src="./media/falsch.png" alt="invalid" class="icon-invalid" />
+          </div>
           <label for="password-conf" class="password-label"
             >Password Confirmation</label
           >
-          <input
-            type="password"
-            class="input"
-            name="password-conf"
-            id="password-conf-input"
-            required />
+          <div class="section">
+            <input
+              type="password"
+              class="input"
+              name="password-conf"
+              id="password-conf-input"
+              required /><img
+              src="./media/richtig.png"
+              alt="valid"
+              class="icon-valid" />
+            <img src="./media/falsch.png" alt="invalid" class="icon-invalid" />
+          </div>
+
           <input type="submit" value="Submit" id="submit-btn" />
         </form>
       </div>
