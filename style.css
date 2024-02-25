@@ -27,12 +27,15 @@ body {
   left: 1rem;
   width: 0rem;
   height: 0rem;
-  transition: width 0.3s ease, height 0.3s ease;
+  opacity: 0;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    opacity 1s ease-in-out;
 }
 
 .active {
   width: 2rem;
   height: 2rem;
+  opacity: 1;
 }
 
 .title-container {
@@ -55,10 +58,9 @@ body {
   background-color: rgba(0, 0, 0, 0.707);
   display: flex;
   flex-direction: column;
-  width: 60%;
-  height: 90%;
+  width: 60vw;
+  height: 100vh;
   max-width: 35rem;
-  max-height: 70rem;
   margin-top: 2rem;
   border-radius: 20px;
   box-shadow: 0 20px 30px rgba(241, 238, 238, 0.2);
@@ -67,6 +69,7 @@ body {
 .form-container {
   display: flex;
   flex-direction: column;
+  height: fit-content;
   height: fit-content;
 }
 
@@ -118,12 +121,24 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.password-section {
+  width: 97.5%;
+  padding: 0.2rem;
+}
+
+.password-confirmed {
+  border-radius: 1rem;
+  border: 2px solid green;
+  background-color: rgba(8, 177, 8, 0.234);
+}
+
 #submit-btn {
   position: relative;
   border: none;
   color: white;
   padding: 10px 20px;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 5px;

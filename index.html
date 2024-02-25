@@ -16,6 +16,7 @@
       <div class="form-container">
         <div class="title-container"><h1 class="title">SignUp</h1></div>
         <form class="form">
+          <!--EMAIL-->
           <label class="email-label" for="e-mail">E-Mail:</label>
           <div class="section">
             <input
@@ -29,8 +30,9 @@
               class="valid_ icon" />
             <img src="./media/falsch.png" alt="invalid" class="invalid_ icon" />
           </div>
-          <label for="country" class="country-label">Country:</label>
 
+          <!--COUNTRY-->
+          <label for="country" class="country-label">Country:</label>
           <div class="section">
             <input
               type="text"
@@ -40,9 +42,10 @@
               required />
             <img src="./media/richtig.png" alt="valid" class="valid_ icon" />
             <img src="./media/falsch.png" alt="invalid" class="invalid_ icon" />
+
+            <!--ZIP-->
           </div>
           <label for="zip" class="zip-label">ZIP Code</label>
-
           <div class="section">
             <input
               type="number"
@@ -55,34 +58,45 @@
               class="valid_ icon" />
             <img src="./media/falsch.png" alt="invalid" class="invalid_ icon" />
           </div>
-          <label for="password" class="password-label">Password</label>
 
-          <div class="section">
-            <input
-              type="password"
-              class="input"
-              name="password"
-              id="password-input"
-              required /><img
-              src="./media/richtig.png"
-              alt="valid"
-              class="valid_ icon" />
-            <img src="./media/falsch.png" alt="invalid" class="invalid_ icon" />
-          </div>
-          <label for="password-conf" class="password-label"
-            >Password Confirmation</label
-          >
-          <div class="section">
-            <input
-              type="password"
-              class="input"
-              name="password-conf"
-              id="password-conf-input"
-              required /><img
-              src="./media/richtig.png"
-              alt="valid"
-              class="valid_ icon" />
-            <img src="./media/falsch.png" alt="invalid" class="invalid_ icon" />
+          <!--PASSWORD-->
+          <div class="password-section">
+            <label for="password" class="password-label">Password</label>
+            <div class="section">
+              <input
+                type="password"
+                class="input"
+                name="password"
+                id="password-input"
+                required /><img
+                src="./media/richtig.png"
+                alt="valid"
+                class="valid_ icon" />
+              <img
+                src="./media/falsch.png"
+                alt="invalid"
+                class="invalid_ icon" />
+            </div>
+
+            <!--PASSWORD CONFIRMATION-->
+            <label for="password-conf" class="password-label"
+              >Password Confirmation</label
+            >
+            <div class="section">
+              <input
+                type="password"
+                class="input"
+                name="password-conf"
+                id="password-conf-input"
+                required /><img
+                src="./media/richtig.png"
+                alt="valid"
+                class="valid_ icon" />
+              <img
+                src="./media/falsch.png"
+                alt="invalid"
+                class="invalid_ icon" />
+            </div>
           </div>
 
           <input type="submit" value="Submit" id="submit-btn" />

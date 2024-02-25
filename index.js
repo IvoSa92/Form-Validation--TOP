@@ -10,6 +10,7 @@ const passwordInput = document.querySelector("#password-input");
 const passwordConfInput = document.querySelector("#password-conf-input");
 const validIcons = document.querySelectorAll(".valid_");
 const invalidIcons = document.querySelectorAll(".invalid_");
+const passwordSection = document.querySelector(".password-section");
 
 // password functions
 const allCheckingFunctions = [
@@ -24,7 +25,7 @@ const allCheckingFunctions = [
 emailInput.addEventListener("blur", checkMailInput);
 countryInput.addEventListener("blur", checkCountryInput);
 zipInput.addEventListener("blur", checkZipInput);
-passwordInput.addEventListener("blur", checkPassword);
+passwordInput.addEventListener("blur", passwordCheckingFunctions);
 passwordConfInput.addEventListener("blur", passwordCheckingFunctions);
 form.addEventListener("submit", submitForm);
 
@@ -137,8 +138,18 @@ function checkConfPassword() {
 }
 
 function checkPwSimilarity() {
-  if (passwordInput.value === passwordConfInput.value) {
-    console.log("passwörter sind gleich ");
+  let confirmed = false;
+  if (
+    passwordInput.value === passwordConfInput.value &&
+    passwordInput.value != "" &&
+    passwordConfInput.value != "" &&
+    !confirmed
+  ) {
+    passwordSection.classList.add("password-confirmed");
+    confirmed = true;
+  } else if (passwordConfInput.value != passwordInput.value) {
+    passwordSection.classList.remove("password-confirmed");
+    confirmed = false;
   }
 }
 
