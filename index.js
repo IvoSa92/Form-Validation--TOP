@@ -25,7 +25,7 @@ const allCheckingFunctions = [
 emailInput.addEventListener("blur", checkMailInput);
 countryInput.addEventListener("blur", checkCountryInput);
 zipInput.addEventListener("blur", checkZipInput);
-passwordInput.addEventListener("blur", passwordCheckingFunctions);
+passwordInput.addEventListener("blur", checkPassword);
 passwordConfInput.addEventListener("blur", passwordCheckingFunctions);
 form.addEventListener("submit", submitForm);
 
@@ -100,6 +100,8 @@ function checkPassword() {
     invalidIcons[3].classList.remove("active");
 
     return true;
+  } else if (passwordConfInput.value) {
+    checkPwSimilarity();
   } else {
     passwordInput.classList.remove("valid");
     passwordInput.classList.add("invalid");
