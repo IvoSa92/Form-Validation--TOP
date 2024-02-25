@@ -8,6 +8,17 @@ const countryInput = document.querySelector("#country-input");
 const zipInput = document.querySelector("#zip-input");
 const passwordInput = document.querySelector("#password-input");
 const passwordConfInput = document.querySelector("#password-conf-input");
+const validIcons = document.querySelectorAll(".valid_");
+const invalidIcons = document.querySelectorAll(".invalid_");
+
+// password functions
+const allCheckingFunctions = [
+  checkMailInput,
+  checkCountryInput,
+  checkZipInput,
+  checkPassword,
+  checkConfPassword,
+];
 
 // event listeners for the inputs with the checking functions
 emailInput.addEventListener("blur", checkMailInput);
@@ -22,11 +33,14 @@ function checkMailInput() {
   if (emailInput.value.includes("@") && emailInput.value.length > 5) {
     emailInput.classList.remove("invalid");
     emailInput.classList.add("valid");
+    validIcons[0].classList.add("active");
+    invalidIcons[0].classList.remove("active");
     return true;
   } else {
     emailInput.classList.remove("valid");
     emailInput.classList.add("invalid");
-    console.log("mail false");
+    validIcons[0].classList.remove("active");
+    invalidIcons[0].classList.add("active");
 
     return false;
   }
@@ -36,11 +50,15 @@ function checkCountryInput() {
   if (countryInput.value.match(/^[A-Za-z-]+$/)) {
     countryInput.classList.remove("invalid");
     countryInput.classList.add("valid");
+    validIcons[1].classList.add("active");
+    invalidIcons[1].classList.remove("active");
+
     return true;
   } else {
     countryInput.classList.remove("valid");
     countryInput.classList.add("invalid");
-    console.log("country false");
+    validIcons[1].classList.remove("active");
+    invalidIcons[1].classList.add("active");
 
     return false;
   }
@@ -50,11 +68,15 @@ function checkZipInput() {
   if (zipInput.value.length > 3) {
     zipInput.classList.remove("invalid");
     zipInput.classList.add("valid");
+    validIcons[2].classList.add("active");
+    invalidIcons[2].classList.remove("active");
+
     return true;
   } else {
     zipInput.classList.remove("valid");
     zipInput.classList.add("invalid");
-    console.log("zip false");
+    validIcons[2].classList.remove("active");
+    invalidIcons[2].classList.add("active");
 
     return false;
   }
@@ -73,11 +95,16 @@ function checkPassword() {
   ) {
     passwordInput.classList.remove("invalid");
     passwordInput.classList.add("valid");
+    validIcons[3].classList.add("active");
+    invalidIcons[3].classList.remove("active");
+
     return true;
   } else {
     passwordInput.classList.remove("valid");
     passwordInput.classList.add("invalid");
-    console.log("pw false");
+    validIcons[3].classList.remove("active");
+    invalidIcons[3].classList.add("active");
+
     return false;
   }
 }
@@ -95,11 +122,16 @@ function checkConfPassword() {
   ) {
     passwordConfInput.classList.remove("invalid");
     passwordConfInput.classList.add("valid");
+    validIcons[4].classList.add("active");
+    invalidIcons[4].classList.remove("active");
+
     return true;
   } else {
     passwordConfInput.classList.remove("valid");
     passwordConfInput.classList.add("invalid");
-    console.log("pw conf false");
+    validIcons[4].classList.remove("active");
+    invalidIcons[4].classList.add("active");
+
     return false;
   }
 }
@@ -114,17 +146,13 @@ function passwordCheckingFunctions() {
   checkConfPassword();
   checkPassword();
   checkPwSimilarity();
+  if (allCheckingFunctions.every((condition) => condition())) {
+    submitButton.classList.toggle("submit-active");
+  }
 }
 
 function submitForm(e) {
   e.preventDefault();
-  const allCheckingFunctions = [
-    checkMailInput,
-    checkCountryInput,
-    checkZipInput,
-    checkPassword,
-    checkConfPassword,
-  ];
 
   if (allCheckingFunctions.every((condition) => condition())) {
     console.log("all true alter");
@@ -132,3 +160,5 @@ function submitForm(e) {
     console.log("you fucked up");
   }
 }
+
+//submitButton.classList.toggle("submit-active");

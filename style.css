@@ -22,15 +22,7 @@ body {
   display: flex;
 }
 
-.icon-valid {
-  position: relative;
-  left: 1rem;
-  width: 0rem;
-  height: 0rem;
-  transition: width 0.3s ease, height 0.3s ease;
-}
-
-.icon-invalid {
+.icon {
   position: relative;
   left: 1rem;
   width: 0rem;
@@ -138,9 +130,13 @@ input[type="number"]::-webkit-outer-spin-button {
   cursor: pointer;
   overflow: hidden;
   margin-left: 2rem;
-  background: linear-gradient(45deg, blue, red);
+  background-color: rgba(128, 128, 128, 0.399);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.submit-active {
+  background: linear-gradient(45deg, blue, red);
 }
 
 #submit-btn:hover {
